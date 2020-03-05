@@ -7,6 +7,7 @@ from tools.data_loader import load_image_s,load_image_u
 from tools.output import generate_multi_images
 import time
 import os
+import args
 
 Model = 'Unet'
 EPOCHS = 50
