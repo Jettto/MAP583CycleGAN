@@ -17,7 +17,7 @@ def get_trainer(args):
     if (args.model_name == 'lgan'):
         return LGAN(), False
     if (args.model_name == 'unn'):
-        return UNN(), False
+        return Unet(), False
     if (args.model_name == 'cyclegan'):
         return CycleGAN(), True
     if (args.model_name == 'lcyclegan'):
