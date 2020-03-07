@@ -26,13 +26,15 @@ def get_trainer(model_name):
     return None
 
 
-def fit(train_ds, test_ds,epochs):
+def fit(train_ds, test_ds,epochs, restore = False):
   Trainer, is_cycle = get_trainer(model_name)
+  if restore:
+    Trainer.checkpoint.restore(tf.train.latest_checkpoint(Trainer.checkpoint_dir))
   for epoch in range(epochs):
     start = time.time()
 
     generate_multi_images(Trainer, test_ds,6,epoch)
-
+    print("Epoch: ", epoch)
     # Train
     for n, (input_image, target) in enumerate(train_ds):
       print('.', end='')
