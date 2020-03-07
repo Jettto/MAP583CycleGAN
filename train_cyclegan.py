@@ -10,7 +10,7 @@ import time
 import os
 
 model_name = 'cyclegan'
-epoch = 50
+epoch = 100
 
 def get_trainer(model_name):
     if (model_name == 'gan'):
